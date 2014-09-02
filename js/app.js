@@ -27,7 +27,7 @@ app.controller('gameCtrl', ["$scope", "$firebase",
             }, {
                 mark: '',
                 moleStat: 0
-            }, {  
+            }, {
                 mark: '',
                 moleStat: 0
             }, {
@@ -36,8 +36,9 @@ app.controller('gameCtrl', ["$scope", "$firebase",
             }],
             currPlayer: 0,
             playerNum: 0,
-            gameInProgress: true, 
-            results: "",
+            gameInProgress: true,
+            results: '',
+
             players: [{
                 name: '',
                 moleNum: 1
@@ -64,18 +65,22 @@ app.controller('gameCtrl', ["$scope", "$firebase",
 
         });
 
-        
+
         // set and add the players name to the array
         $scope.addName = function() {
             if ($scope.playerNumber == 0) {
                 $scope.gameBoard.players[0].name = $scope.playerName;
                 console.log('Waiting for player');
+
             } else if ($scope.playerNumber == 1) {
                 $scope.gameBoard.players[1].name = $scope.playerName;
             } else if ($scope.playerNumber > 1) {
                 alert('Please wait for your turn');
             }
+            $scope.info = !$scope.info;
         };
+
+        $scope.info = true;
 
         $scope.switchPlayer = function($index) {
 
@@ -84,11 +89,11 @@ app.controller('gameCtrl', ["$scope", "$firebase",
                 $scope.moleTrap($index); // Mole function called to plant the mole trap
                 $scope.initGame($index); // Init function called to place game pieces on the game board
                 $scope.winCond(); // Winning condition function called to check results
- 
+
                 $scope.gameBoard.currPlayer = ($scope.gameBoard.currPlayer + 1) % 2; //Switch from player one to two
-                
-            } else if ($scope.gameBoard.cells[$index].mark != ''){
-                    alert("Monty doesn't like that.");
+
+            } else if ($scope.gameBoard.cells[$index].mark != '') {
+                alert("Monty doesn't like that.");
             } else {
                 alert('Please wait your turn.');
             }
@@ -99,6 +104,7 @@ app.controller('gameCtrl', ["$scope", "$firebase",
             if ($scope.gameBoard.currPlayer == 0 && $scope.gameBoard.players[0].moleNum == 1) {
                 $scope.gameBoard.cells[$index].moleStat = 1;
                 $scope.gameBoard.players[0].moleNum = 0;
+
 
             } else if ($scope.gameBoard.currPlayer == 1 && $scope.gameBoard.players[1].moleNum == 2) {
                 $scope.gameBoard.cells[$index].moleStat = 2;
@@ -114,7 +120,7 @@ app.controller('gameCtrl', ["$scope", "$firebase",
             if ($scope.gameBoard.currPlayer === 0) {
                 if ($scope.gameBoard.cells[$index].moleStat === 2) {
 
-                    $scope.max = '../images/moled2animation.gif';
+                    $scope.max = '../images/pipeanimation.gif';
                     console.log('You Got Moled!');
                     $scope.gameBoard.cells[$index].moleStat = 0;
                     $scope.playerMole2 = true;
@@ -127,33 +133,35 @@ app.controller('gameCtrl', ["$scope", "$firebase",
 
                 }
             } else if ($scope.gameBoard.currPlayer === 1) {
-               
+
                 if ($scope.gameBoard.cells[$index].moleStat === 1) {
-                    $scope.max = '../images/moled1animation.gif';
+                    $scope.max = '../images/pipeanimation.gif';
+                    console.log('You Got Moled!');
                     $scope.gameBoard.cells[$index].moleStat = 0;
                     $scope.playerMole = true;
 
 
                 } else if ($scope.gameBoard.cells[$index].mark === '' && $scope.gameBoard.cells[$index].moleStat === 0) {
                     $scope.gameBoard.cells[$index].mark = 'o';
-                   
+
                 }
 
             };
 
 
         }; // end of switchPlayer function
-  
+
         $scope.winner = function() {
             if ($scope.gameBoard.currPlayer == 0) {
-                $scope.gameBoard.results = $scope.gameBoard.players[0].name + " is the winner!!"
+                $scope.gameBoard.results = $scope.gameBoard.players[0].name + " is the winner, that's moltastic!!"
             } else {
-                $scope.gameBoard.results = $scope.gameBoard.players[1].name + " is the winner!!"
+                $scope.gameBoard.results = $scope.gameBoard.players[1].name + " is the winner, that's moltastic!!"
             }
         }
-        $scope.draw = function($index) {
-            if ($scope.gameBoard.cells[$index] != ''){
-                $scope.gameBoard.results = "Sorry mole wranglers it's a draw";
+        $scope.draw = function() {
+
+            if ($scope.gameBoard.cells[0].mark != '' && $scope.gameBoard.cells[1].mark != '' && $scope.gameBoard.cells[2].mark != '' && $scope.gameBoard.cells[3].mark != '' && $scope.gameBoard.cells[4].mark != '' && $scope.gameBoard.cells[5].mark != '' && $scope.gameBoard.cells[6].mark != '' && $scope.gameBoard.cells[7].mark != '' && $scope.gameBoard.cells[8].mark != '') {
+                $scope.gameBoard.results = "Sorry mole wranglers, it's a draw";
             }
 
         }
@@ -180,7 +188,7 @@ app.controller('gameCtrl', ["$scope", "$firebase",
 
             ) {
                 $scope.winner(); // calling winner function
-               
+
             } else {
                 $scope.draw();
             }

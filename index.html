@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html ng-app="app">
 
 <head>
@@ -16,27 +16,36 @@
 <body ng-controller="gameCtrl">
     <main>
         <div id="container">
-            <div id="play" ng-hide="playerScreen">
+            <div id="play">
+            		
                 <h1>Tic Tac Moles</h1>
-                <form name="playas">
-                    <span class="playerOne">Player Name</span>
-                    <input id="player1" ng-model="playerName">{{playerNumber}} {{gameBoard.currPlayer}}
-
+                <div class="cloud x2"></div>
+                <form name="playas" ng-show="info">
+                    <span class="playerOne">Enter Name</span>
+                    <input id="player1" ng-model="playerName">
+                    <br>
+                    <span class="playerinfo">Hide your Monty the mole in the field.</span>
+                	
                     <button class="btn btn-success" type="button" ng-click="addName()"><i class="icon-plus"></i>SUBMIT</button>
                 </form>
+                <div class="playerID">You are player {{gameBoard.playerNum}}</div>
+                <div ng-bind="playerName" class="playerName">{{playerName}}</div>
+
+                <div class="output" ng-hide="info1" ng-model="results">{{gameBoard.results}}</div>
                 <div class="faceOff">
                     <div class="pOne">Player {{gameBoard.currPlayer+1}}'s move</div>
-                    <div ng-model="results">{{gameBoard.results}}</div>
-
                 </div>
             </div>
-            <img ng-src="{{max}}">
-            <div class="boardContainer" ng-hide="boardCont">
+                	<div class="cloud x3"></div>
+                	<div class="cloud x4"></div>
+            <div class="boardContainer">	
                 <div class="gameBoard">
                     <div ng-repeat="cell in gameBoard.cells track by $index" ng-class="{cell: true, clear:($index % 3 === 0), rightLine: ($index % 3 != 2), bottomLine:($index <=5), montyHover: hover}" ng-mouseenter="hover =true" ng-mouseleave="hover =false" ng-click="switchPlayer($index)">{{ cell.mark }}</div>
                 </div>
-                <button ng-class="resetbtn" ng-click="gameBoard.gameInProgress=false">RESET<br> GAME</button>
+                <button ng-class="resetbtn" ng-click="gameBoard.gameInProgress=false">RESET
+                    <br>GAME</button>
             </div>
+            <img class="moledMonty" ng-src="{{max}}">
     </main>
 </body>
 

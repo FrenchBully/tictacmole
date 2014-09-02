@@ -1,6 +1,6 @@
 body {
 	color: white;
-	background: url(grassbg.jpg) repeat;
+	background: url(../images/grassbg.jpg) repeat;
 	
 }
 
@@ -11,9 +11,19 @@ body {
 
 }
 .gameBoard {
+	background: url(../images/dirtbg.gif) repeat;
+	width: 500px;
+	height: 500px;
+	border:1px solid black;
+	padding: 35px 0px 0px 35px;
 	position: relative;
 	left: 275px;
 	top:50px;
+
+}
+.openScreen {
+	background: url(../images/landscape.jpg) no-repeat top left;
+
 
 }
 
@@ -30,9 +40,16 @@ body {
 	border-radius: 20px;
 }
  
- .onHover {
-	background-color: green;
+ .montyHover {
+	background: url(../images/monty1.png) no-repeat;
 	
+}
+.montyHover2 {
+	background: url(../images/monty1.png) no-repeat;
+
+}
+.normalHover {
+	background-color: green;
 }
 
 .rightLine {border-right: 3px solid black;}
@@ -80,8 +97,10 @@ form {
 	font-family: 'Raleway', sans-serif;
 
 } 
-button {
-	height: 40px;
+.restbtn {
+	background: url(../images/resetbtn.gif);
+	height: 78px;
+	width: 90px;
 	position: relative;
 	left: 300px;
 	top: 20px;
