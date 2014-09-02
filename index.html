@@ -28,7 +28,7 @@
                 	
                     <button class="btn btn-success" type="button" ng-click="addName()"><i class="icon-plus"></i>SUBMIT</button>
                 </form>
-                <div class="playerID">You are player {{gameBoard.playerNum}}</div>
+                <div class="playerID">You are player {{playerNumber+1}}</div>
                 <div ng-bind="playerName" class="playerName">{{playerName}}</div>
 
                 <div class="output" ng-hide="info1" ng-model="results">{{gameBoard.results}}</div>
