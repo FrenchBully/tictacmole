@@ -70,12 +70,12 @@ app.controller('gameCtrl', ["$scope", "$firebase",
         $scope.addName = function() {
             if ($scope.playerNumber == 0) {
                 $scope.gameBoard.players[0].name = $scope.playerName;
-                console.log('Waiting for player');
+                console.log('Waiting for your challenger.');
 
             } else if ($scope.playerNumber == 1) {
                 $scope.gameBoard.players[1].name = $scope.playerName;
             } else if ($scope.playerNumber > 1) {
-                alert('Please wait for your turn');
+                alert('Please wait your turn, game in progress.');
             }
             $scope.info = !$scope.info;
         };
@@ -111,8 +111,6 @@ app.controller('gameCtrl', ["$scope", "$firebase",
                 $scope.gameBoard.players[1].moleNum = 0;
 
             }
-
-
         }
 
         // Initiate game play and logic
@@ -157,6 +155,7 @@ app.controller('gameCtrl', ["$scope", "$firebase",
             } else {
                 $scope.gameBoard.results = $scope.gameBoard.players[1].name + " is the winner, that's moltastic!!"
             }
+            $scope.gameBoard.gameInProgress = false;
         }
         $scope.draw = function() {
 
@@ -164,6 +163,7 @@ app.controller('gameCtrl', ["$scope", "$firebase",
                 $scope.gameBoard.results = "Sorry mole wranglers, it's a draw";
             }
 
+            $scope.gameBoard.gameInProgress = false;
         }
 
         // The winning conditions and the outcome

@@ -1,18 +1,15 @@
 body {
     color: white;
-    background:#9FC4F1 url(../images/marioworld.jpg) no-repeat;
+    background: #9FC4F1 url(../images/marioworld.jpg) no-repeat;
     background-position: left bottom;
-
-
 }
 @font-face {
-	font-family: supermariobro1;
-	src: url(../fonts/supermariobros.ttf);
+    font-family: supermariobro1;
+    src: url(../fonts/supermariobros.ttf);
 }
-
 @font-face {
-	font-family: supermariobrowii;
-	src: url(../fonts/supermariobroswii.otf);
+    font-family: supermariobrowii;
+    src: url(../fonts/supermariobroswii.otf);
 }
 #container {
     background-color: transparent;
@@ -29,15 +26,14 @@ body {
     left: 160px;
 }
 .boardContainer {
-	position: relative;
-	top: -160px;
-	left: 70px;
+    position: relative;
+    top: -160px;
+    left: 70px;
 }
 .startScreen {
     background: url(../images/landscape.jpg) no-repeat top left;
 }
 .cell {
-    /*background: url(dirt.jpg) center; */
     display: inline-block;
     float: left;
     width: 150px;
@@ -50,22 +46,21 @@ body {
     font-family: supermariobro1;
     text-shadow: 1px 1px 2px black;
 }
-
 .rightLine {
-    border-right: 3px solid rgba(183,117,12, 0.6);
+    border-right: 3px solid rgba(183, 117, 12, 0.6);
 }
 .bottomLine {
-    border-bottom: 3px solid rgba(183,117,12, 0.6);
+    border-bottom: 3px solid rgba(183, 117, 12, 0.6);
 }
-.playerOne{
-	position: relative;
+.playerOne {
+    position: relative;
     font-size: 30px;
     font-family: 'Dancing Script', cursive;
     margin-left: 88px;
 }
-.playerinfo{
-	color: #CE9651;
-	position: relative;
+.playerinfo {
+    color: #CE9651;
+    position: relative;
     font-size: 25px;
     font-family: 'Dancing Script', cursive;
     margin-left: 88px;
@@ -93,7 +88,6 @@ form {
     font-family: supermariobro1, sans-serif;
     text-shadow: 1px 1px 2px black;
 }
-
 .pTwo {
     float: left;
     margin-left: 20px;
@@ -101,27 +95,26 @@ form {
     font-family: 'Raleway', sans-serif;
 }
 .playerName {
-	color: #5DC2FF;
-	text-shadow: 1px 1px 2px black;
-	font-size: 40px;
-	font-family: 'Dancing Script', cursive;
+    color: #5DC2FF;
+    text-shadow: 1px 1px 2px black;
+    font-size: 40px;
+    font-family: 'Dancing Script', cursive;
 }
 .playerID {
-	font-size: 20px;
-	font-family: 'Raleway', sans-serif;
-
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
 }
 .output {
-	color: #5DC2FF;
-	text-shadow: 1px 1px 2px black;
-	font-size: 40px;
-	font-family: 'Dancing Script', cursive;
-	position: relative;
-	left: 250px;
+    color: #5DC2FF;
+    text-shadow: 1px 1px 2px black;
+    font-size: 40px;
+    font-family: 'Dancing Script', cursive;
+    position: relative;
+    left: 250px;
 }
 .moledMonty {
-	background: url(../images/moletime.gif) no-repeat;
-	z-index: 12;
+    background: url(../images/moletime.gif) no-repeat;
+    z-index: 12;
 }
 button {
     background: url(../images/resetbtn.gif) no-repeat;
@@ -129,13 +122,12 @@ button {
     width: 75px;
     position: relative;
     border: none;
-    
 }
 img {
     border-radius: 20px;
     position: absolute;
     left: 1214px;
-    top:711px
+    top: 711px
 }
 input {
     font-size: 15px;
@@ -148,119 +140,111 @@ h1 {
     font-size: 90px;
     font-family: supermariobrowii, cursive;
     margin-bottom: -30px;
-
 }
 h2 {
     color: yellow;
 }
-
 .conClouds {
-	z-index: 0;
+    z-index: 0;
 }
-/*Time to finalise the cloud shape*/
+/* ref http://thecodeplayer.com/walkthrough/pure-css3-animated-clouds-background */
+
 .cloud {
-	width: 200px; height: 60px;
-	background: #fff;
-	
-	border-radius: 200px;
-	-moz-border-radius: 200px;
-	-webkit-border-radius: 200px;
-	
-	position: relative; 
+    width: 200px;
+    height: 60px;
+    background: #fff;
+    border-radius: 200px;
+    -moz-border-radius: 200px;
+    -webkit-border-radius: 200px;
+    position: relative;
 }
-
 .cloud:before, .cloud:after {
-	content: '';
-	position: absolute; 
-	background: #fff;
-	width: 100px; height: 80px;
-	position: absolute; top: -15px; left: 10px;
-	
-	border-radius: 100px;
-	-moz-border-radius: 100px;
-	-webkit-border-radius: 100px;
-	
-	-webkit-transform: rotate(30deg);
-	transform: rotate(30deg);
-	-moz-transform: rotate(30deg);
+    content: '';
+    position: absolute;
+    background: #fff;
+    width: 100px;
+    height: 80px;
+    position: absolute;
+    top: -15px;
+    left: 10px;
+    border-radius: 100px;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -webkit-transform: rotate(30deg);
+    transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
 }
-
 .cloud:after {
-	width: 120px; height: 120px;
-	top: -55px; left: auto; right: 15px;
+    width: 120px;
+    height: 120px;
+    top: -55px;
+    left: auto;
+    right: 15px;
 }
-
-/*Time to animate*/
-.x1 {
-	-webkit-animation: moveclouds 15s linear infinite;
-	-moz-animation: moveclouds 15s linear infinite;
-	-o-animation: moveclouds 15s linear infinite;
-}
-
-/*variable speed, opacity, and position of clouds for realistic effect*/
 .x2 {
-	left: 200px;
-	
-	-webkit-transform: scale(0.6);
-	-moz-transform: scale(0.6);
-	transform: scale(0.6);
-	opacity: 0.6; /*opacity proportional to the size*/
-	
-	/*Speed will also be proportional to the size and opacity*/
-	/*More the speed. Less the time in 's' = seconds*/
-	-webkit-animation: moveclouds 25s linear infinite;
-	-moz-animation: moveclouds 25s linear infinite;
-	-o-animation: moveclouds 25s linear infinite;
+    left: 200px;
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    transform: scale(0.6);
+    opacity: 0.6;
+    -webkit-animation: moveclouds 25s linear infinite;
+    -moz-animation: moveclouds 25s linear infinite;
+    -o-animation: moveclouds 25s linear infinite;
 }
-
 .x3 {
-	left: -250px; top: -200px;
-	
-	-webkit-transform: scale(0.8);
-	-moz-transform: scale(0.8);
-	transform: scale(0.8);
-	opacity: 0.8; /*opacity proportional to the size*/
-	
-	-webkit-animation: moveclouds 20s linear infinite;
-	-moz-animation: moveclouds 20s linear infinite;
-	-o-animation: moveclouds 20s linear infinite;
+    left: -250px;
+    top: -200px;
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.8;
+    -webkit-animation: moveclouds 20s linear infinite;
+    -moz-animation: moveclouds 20s linear infinite;
+    -o-animation: moveclouds 20s linear infinite;
 }
-
 .x4 {
-	left: 470px; top: -250px;
-	
-	-webkit-transform: scale(0.75);
-	-moz-transform: scale(0.75);
-	transform: scale(0.75);
-	opacity: 0.75; /*opacity proportional to the size*/
-	
-	-webkit-animation: moveclouds 18s linear infinite;
-	-moz-animation: moveclouds 18s linear infinite;
-	-o-animation: moveclouds 18s linear infinite;
+    left: 470px;
+    top: -250px;
+    -webkit-transform: scale(0.75);
+    -moz-transform: scale(0.75);
+    transform: scale(0.75);
+    opacity: 0.75;
+    -webkit-animation: moveclouds 18s linear infinite;
+    -moz-animation: moveclouds 18s linear infinite;
+    -o-animation: moveclouds 18s linear infinite;
 }
-
 .x5 {
-	left: -150px; top: -150px;
-	
-	-webkit-transform: scale(0.8);
-	-moz-transform: scale(0.8);
-	transform: scale(0.8);
-	opacity: 0.8; /*opacity proportional to the size*/
-	
-	-webkit-animation: moveclouds 20s linear infinite;
-	-moz-animation: moveclouds 20s linear infinite;
-	-o-animation: moveclouds 20s linear infinite;
+    left: -150px;
+    top: -150px;
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.8;
+    -webkit-animation: moveclouds 20s linear infinite;
+    -moz-animation: moveclouds 20s linear infinite;
+    -o-animation: moveclouds 20s linear infinite;
 }
-
 @-webkit-keyframes moveclouds {
-	0% {margin-left: 1000px;}
-	100% {margin-left: -1000px;}
+    0% {
+        margin-left: 1000px;
+    }
+    100% {
+        margin-left: -1000px;
+    }
 }
 @-moz-keyframes moveclouds {
-	0% {margin-left: 1000px;}
-	100% {margin-left: -1000px;}
+    0% {
+        margin-left: 1000px;
+    }
+    100% {
+        margin-left: -1000px;
+    }
 }
 @-o-keyframes moveclouds {
-	0% {margin-left: 1000px;}
-	100% {margin-left: -1000px;}
+    0% {
+        margin-left: 1000px;
+    }
+    100% {
+        margin-left: -1000px;
+    }
 }
